@@ -1,4 +1,4 @@
-import random
+
 # def first():
 #     ''' С клавиатуры вводится 7-значное число. Если четных цифр в нем больше, чем нечетных, то найти сумму всех его цифр, если нечетных больше, то найти произведение 1 3 и 6 цифры.'''
 #     chislo = input("7-значное число")
@@ -44,22 +44,33 @@ assert test_first("2345678") == 35'''
 # assert second([1, 1, 1, 3145, 2567, 223, 56354, 123, 534, 2, 3, 4, 5, 6, 7, 8, 1], 1) == 4
 
 
-def thirst (word="HjkyLMu"):
-    '''Посчитать, сколько пар (стоят рядом) верхнего и нижнего регистра находится в веденном с клавиатуры слове.
-     (Пример HjkLM- 1 пара нижнего, 1 пара верхнего), а также сколько всего букв в слове, сколько гласных и согласных.'''
-    verh, niz, glas = 0, 0, 0
-    spis = ['a', 'e', 'y', 'u', 'i', 'o', 'A', 'E', 'Y', 'U', 'I', 'O']
-    for i in range(len(word) - 1):
-        if word[i].isupper() and word[i + 1].isupper():
-            verh += 1
-        if word[i].islower() and word[i + 1].islower():
-            niz += 1
-    for i in range(len(word)):
-        if spis.count(word[i]) > 0:
-            glas += 1
-    kol = len(word)
-    return {"Bolshie bukvi": verh, "Malenkie bukvi": niz, "Bukv stolko": kol, "Glasnih stoka": glas, "Soglasnih stoka": kol - glas}
+# def thirst (word="HjkyLMu"):
+#     '''Посчитать, сколько пар (стоят рядом) верхнего и нижнего регистра находится в веденном с клавиатуры слове.
+#      (Пример HjkLM- 1 пара нижнего, 1 пара верхнего), а также сколько всего букв в слове, сколько гласных и согласных.'''
+#     verh, niz, glas = 0, 0, 0
+#     spis = ['a', 'e', 'y', 'u', 'i', 'o', 'A', 'E', 'Y', 'U', 'I', 'O']
+#     for i in range(len(word) - 1):
+#         if word[i].isupper() and word[i + 1].isupper():
+#             verh += 1
+#         if word[i].islower() and word[i + 1].islower():
+#             niz += 1
+#     for i in range(len(word)):
+#         if spis.count(word[i]) > 0:
+#             glas += 1
+#     kol = len(word)
+#     return {"Bolshie bukvi": verh, "Malenkie bukvi": niz, "Bukv stolko": kol, "Glasnih stoka": glas, "Soglasnih stoka": kol - glas}
+#
+# assert thirst() == {'Bolshie bukvi': 1, 'Malenkie bukvi': 2, 'Bukv stolko': 7, 'Glasnih stoka': 2, 'Soglasnih stoka': 5}
+# assert thirst("KAValeriStIBeGali") == {'Bolshie bukvi': 3, 'Malenkie bukvi': 6, 'Bukv stolko': 17, 'Glasnih stoka': 8, 'Soglasnih stoka': 9}
+# assert thirst("K") == {'Bolshie bukvi': 0, 'Malenkie bukvi': 0, 'Bukv stolko': 1, 'Glasnih stoka': 0, 'Soglasnih stoka': 1}
 
-assert thirst() == {'Bolshie bukvi': 1, 'Malenkie bukvi': 2, 'Bukv stolko': 7, 'Glasnih stoka': 2, 'Soglasnih stoka': 5}
-assert thirst("KAValeriStIBeGali") == {'Bolshie bukvi': 3, 'Malenkie bukvi': 6, 'Bukv stolko': 17, 'Glasnih stoka': 8, 'Soglasnih stoka': 9}
-assert thirst("K") == {'Bolshie bukvi': 0, 'Malenkie bukvi': 0, 'Bukv stolko': 1, 'Glasnih stoka': 0, 'Soglasnih stoka': 1}
+def fourth(spis_elem=[1, 10, 83, 29, 29, 1, "d", "artem", "qwerty", "qwerty"]):
+    '''Дан список. Выведите те его элементы, которые встречаются в списке только один раз.
+    Элементы нужно выводить в том порядке, в котором они встречаются в списке.'''
+    otvet = []
+    for el in spis_elem:
+        if spis_elem.count(el) == 1:
+            otvet.append(el)
+    return otvet
+assert fourth() == [10, 83, "d", "artem"]
+assert fourth(['jskhdf1', 190, 190, 190, 20, 'fd', 'fd', 'a']) == ['jskhdf1', 20, 'a']
