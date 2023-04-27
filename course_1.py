@@ -67,39 +67,42 @@ assert test_first("2345678") == 35'''
 # def fourth(spis_elem=[1, 10, 83, 29, 29, 1, "d", "artem", "qwerty", "qwerty"]):
 #     '''Дан список. Выведите те его элементы, которые встречаются в списке только один раз.
 #     Элементы нужно выводить в том порядке, в котором они встречаются в списке.'''
-#     otvet = []
-#     for el in spis_elem:
-#         if spis_elem.count(el) == 1:
-#             otvet.append(el)
-#     return otvet
+    # otvet = []
+    # for el in spis_elem:
+    #     if spis_elem.count(el) == 1:
+    #         otvet.append(el)
+    # return otvet
+#     return [el for el in spis_elem if spis_elem.count(el) == 1]
 # assert fourth() == [10, 83, "d", "artem"]
 # assert fourth(['jskhdf1', 190, 190, 190, 20, 'fd', 'fd', 'a']) == ['jskhdf1', 20, 'a']
-def perebor(kort):
 
-    sum, max, min = 0, 0, kort[randint(0, len(kort))]
-    for el in kort:
-        sum += el
-        if el > max:
-            max = el
-        if el < min:
-            min = el
-    return sum, kort.index(max) + 1, kort.index(min) + 1
 
-def fifth(kort_1=(35, 78, 21, 37, 2, 98, 6, 100, 231), kort_2=(45, 21, 124, 76, 5, 23, 91, 234)):
-    '''Даны два кортежа:
-    C_1 = (35, 78,21,37, 2,98, 6, 100, 231)
-    C_2 = (45, 21,124,76,5,23,91,234)
-    Необходимо определить:
-    1) Сумма элементов какого из кортежей больше и вывести соответствующее сообщение на экран (Сумма больше в кортеже - ..)
-    2) Вывести на экран порядковые номера минимальных и максимальных элементов этих кортежей'''
-    sum_1, sum_2, max_1, max_2, min_1, min_2 = 0, 0, 0, 0, 0, 0
-    sum_1, max_1, min_1 = perebor(kort_1)
-    sum_2, max_2, min_2 = perebor(kort_2)
-    if sum_1 > sum_2:
-        print('Сумма больше в кортеже - 1')
-    else:
-        print('Сумма больше в кортеже - 2')
-    print('В первом кортеже порядковый номер минимального числа = {}, а максимального = {}'.format(min_1, max_1))
-    print('Во втором кортеже порядковый номер минимального числа = {}, а максимального = {}'.format(min_2, max_2))
-
-fifth()
+# def perebor(kort):
+#
+#     sum, max, min = 0, 0, kort[randint(0, len(kort))]
+#     for el in kort:
+#         sum += el
+#         if el > max:
+#             max = el
+#         if el < min:
+#             min = el
+#     return sum, kort.index(max) + 1, kort.index(min) + 1
+#
+# def fifth(kort_1=(35, 78, 21, 37, 2, 98, 6, 100, 231), kort_2=(45, 21, 124, 76, 5, 23, 91, 234)):
+#     '''Даны два кортежа:
+#     C_1 = (35, 78,21,37, 2,98, 6, 100, 231)
+#     C_2 = (45, 21,124,76,5,23,91,234)
+#     Необходимо определить:
+#     1) Сумма элементов какого из кортежей больше и вывести соответствующее сообщение на экран (Сумма больше в кортеже - ..)
+#     2) Вывести на экран порядковые номера минимальных и максимальных элементов этих кортежей'''
+#     sum_1, sum_2, max_1, max_2, min_1, min_2 = 0, 0, 0, 0, 0, 0
+#     sum_1, max_1, min_1 = perebor(kort_1)
+#     sum_2, max_2, min_2 = perebor(kort_2)
+#     if sum_1 > sum_2:
+#         print('Сумма больше в кортеже - 1')
+#     else:
+#         print('Сумма больше в кортеже - 2')
+#     print('В первом кортеже порядковый номер минимального числа = {}, а максимального = {}'.format(min_1, max_1))
+#     print('Во втором кортеже порядковый номер минимального числа = {}, а максимального = {}'.format(min_2, max_2))
+#
+# fifth()
